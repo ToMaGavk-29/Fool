@@ -93,7 +93,7 @@ vector<int> Game::GoodCards (const int& strokeNumber, const int& Index, vector<C
 
 bool Game::Beat(const vector<int>& goodCard) {
 	if (goodCard.size() == 0) {
-		cout << "ìíå íå÷åì áèòüñÿ, áåðó êàðòó" << endl;
+		cout << "Ð¼Ð½Ðµ Ð½ÐµÑ‡ÐµÐ¼ Ð±Ð¸Ñ‚ÑŒÑÑ, Ð±ÐµÑ€Ñƒ ÐºÐ°Ñ€Ñ‚Ñƒ" << endl;
 		return false;
 	}	
 	else {
@@ -125,7 +125,7 @@ vector<Card> Game::addCards(vector<Card> Player) {
 			Player.push_back(Deck[0]);
 			Deck.erase(Deck.begin());
 		}
-		cout << "âñå êàðòû âçÿòû" << endl;
+		cout << "Ð²ÑÐµ ÐºÐ°Ñ€Ñ‚Ñ‹ Ð²Ð·ÑÑ‚Ñ‹" << endl;
 	return Player;
 }
 
@@ -152,15 +152,15 @@ int Game::Move_1(int strokeNumber) {
 	int selectedCard = 0;
 	vector<Card> flipCard, flipCard_1;
 	vector<Card> activeCards_1, activeCards_2;
-	cout << "êîëîäà ¹1: " << endl;
+	cout << "ÐºÐ¾Ð»Ð¾Ð´Ð° â„–1: " << endl;
 	PrintVector(Player_1);
 	cout << endl;
-	cout << "êîëîäà ¹2: " << endl;
+	cout << "ÐºÐ¾Ð»Ð¾Ð´Ð° â„–2: " << endl;
 	PrintVector(Player_2);
-	cout << "êàêîé êàðòîé âû õîòèòå ñõîäèòü?" << endl;
+	cout << "ÐºÐ°ÐºÐ¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÑ…Ð¾Ð´Ð¸Ñ‚ÑŒ?" << endl;
 	cin >> selectedCard;
 	--selectedCard;
-	cout << "âû õîäèòå êàðòîé: " << Player_1[selectedCard].name << " " << Player_1[selectedCard].suit << endl;
+	cout << "Ð²Ñ‹ Ñ…Ð¾Ð´Ð¸Ñ‚Ðµ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹: " << Player_1[selectedCard].name << " " << Player_1[selectedCard].suit << endl;
 	activeCards_1.push_back(Player_1[selectedCard]);
 	Player_1.erase(Player_1.begin() + selectedCard);
 	vector<int> goodCard;
@@ -173,7 +173,7 @@ int Game::Move_1(int strokeNumber) {
 		return strokeNumber;
 	}
 	else {	
-		cout << "îòáèâàþ: " << Player_2[goodCard[0]].name << " " << Player_2[goodCard[0]].suit << endl;
+		cout << "Ð¾Ñ‚Ð±Ð¸Ð²Ð°ÑŽ: " << Player_2[goodCard[0]].name << " " << Player_2[goodCard[0]].suit << endl;
 		activeCards_2.push_back(Player_2[goodCard[0]]);
 		Player_2.erase(Player_2.begin() + goodCard[0]);
 		
@@ -186,13 +186,13 @@ int Game::Move_1(int strokeNumber) {
 	}
 	while (flipCard.size() > 0) {
 		int yes = 0;
-		cout << "Âû ìîæåòå ïîäêèíóòü êàðòó. åñëè âû õîòèòå ïîäêèíóòü êàðòó ââåäèòå 1." << endl;
-		cout << "åñëè âû íå õîòèòå ïîäêèäûâàòü êàðòó ââåäèòå 0" << endl;
+		cout << "Ð’Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ð¾Ð´ÐºÐ¸Ð½ÑƒÑ‚ÑŒ ÐºÐ°Ñ€Ñ‚Ñƒ. ÐµÑÐ»Ð¸ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð´ÐºÐ¸Ð½ÑƒÑ‚ÑŒ ÐºÐ°Ñ€Ñ‚Ñƒ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1." << endl;
+		cout << "ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð½Ðµ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð´ÐºÐ¸Ð´Ñ‹Ð²Ð°Ñ‚ÑŒ ÐºÐ°Ñ€Ñ‚Ñƒ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 0" << endl;
 		cin >> yes;
 		if (yes == 1) {
-			cout << "âàøè êàðòû: " << endl;
+			cout << "Ð²Ð°ÑˆÐ¸ ÐºÐ°Ñ€Ñ‚Ñ‹: " << endl;
 			PrintVector(Player_1);
-			cout << "êàêóþ êàðòó âû õîòèòå ïîäêèíóòü?" << endl;
+			cout << "ÐºÐ°ÐºÑƒÑŽ ÐºÐ°Ñ€Ñ‚Ñƒ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð´ÐºÐ¸Ð½ÑƒÑ‚ÑŒ?" << endl;
 			cin >> selectedCard;
 			--selectedCard;
 			if (Check(Player_1[selectedCard], flipCard) == true) {	
@@ -200,21 +200,21 @@ int Game::Move_1(int strokeNumber) {
 				Player_1.erase(Player_1.begin() + selectedCard);
 				goodCard = GoodCards(strokeNumber, activeCards_1.size() - 1, activeCards_1);
 				if (Beat(goodCard) == false) {
-					cout << "áåðó êàðòû" << endl;
+					cout << "Ð±ÐµÑ€Ñƒ ÐºÐ°Ñ€Ñ‚Ñ‹" << endl;
 					takeAll(strokeNumber, activeCards_1, activeCards_2);
 					Player_1 = addCards(Player_1);
 					--strokeNumber;
 					return strokeNumber;	
 				}
 				else {
-					cout << "îòáèâàþ: " << Player_2[goodCard[0]].name << " " << Player_2[goodCard[0]].suit << endl;
+					cout << "Ð¾Ñ‚Ð±Ð¸Ð²Ð°ÑŽ: " << Player_2[goodCard[0]].name << " " << Player_2[goodCard[0]].suit << endl;
 					activeCards_2.push_back(Player_2[goodCard[0]]);	
 					Player_2.erase(Player_2.begin() + goodCard[0]);
 					
 				}
 			}
 			else {
-				cout << "âû íå ìîæåòå ïîäêèíóòü ýòó êàðòó" << endl;
+				cout << "Ð²Ñ‹ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ð¾Ð´ÐºÐ¸Ð½ÑƒÑ‚ÑŒ ÑÑ‚Ñƒ ÐºÐ°Ñ€Ñ‚Ñƒ" << endl;
 			}
 		}
 		else {
@@ -236,10 +236,10 @@ int Game::Move_2(int strokeNumber) {
 	int selectedCard = 0;
 	vector<Card> flipCard, flipCard_1;
 	vector<Card> activeCards_1, activeCards_2;
-	cout << "êîëîäà ¹1: " << endl;
+	cout << "ÐºÐ¾Ð»Ð¾Ð´Ð° â„–1: " << endl;
 	PrintVector(Player_1);
 	cout << endl;
-	cout << "êîëîäà ¹2: " << endl;
+	cout << "ÐºÐ¾Ð»Ð¾Ð´Ð° â„–2: " << endl;
 	PrintVector(Player_2);
 	for(int i = 1; i < Player_2.size(); i++) {
 		if (Player_2[i - 1].suit != TrumpCard.suit && cardPriority[Player_2[i - 1].name] < cardPriority[Player_2[i].name] ) {
@@ -252,12 +252,12 @@ int Game::Move_2(int strokeNumber) {
 			selectedCard = i;
 		}	
 	}
-	cout << "Õîæó: " << Player_2[selectedCard].name << " " << Player_2[selectedCard].suit << endl;
+	cout << "Ð¥Ð¾Ð¶Ñƒ: " << Player_2[selectedCard].name << " " << Player_2[selectedCard].suit << endl;
 	activeCards_2.push_back(Player_2[selectedCard]);
 	Player_2.erase(Player_2.begin() + selectedCard);
 	int stop = 0;
-		cout << "åñëè âû áóäåòå îòáèâàòüñÿ, ââåäèòå 1." << endl;
-		cout << "åñëè âû íå õîòèòå îòáèâàòüñÿ, ââåäèòå 0." << endl;
+		cout << "ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð±ÑƒÐ´ÐµÑ‚Ðµ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1." << endl;
+		cout << "ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð½Ðµ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 0." << endl;
 		cin >> stop;
 		if (stop != 1){
 			takeAll(strokeNumber, activeCards_1, activeCards_2);
@@ -268,7 +268,7 @@ int Game::Move_2(int strokeNumber) {
 	vector<int> goodCard;
 	goodCard = GoodCards(strokeNumber, activeCards_2.size() - 1, activeCards_2);
 	if (goodCard.size() == 0) {
-		cout << "âàì íå÷åì îòáèâàòüñÿ, âû âçÿëè êàðòó" << endl;
+		cout << "Ð²Ð°Ð¼ Ð½ÐµÑ‡ÐµÐ¼ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ, Ð²Ñ‹ Ð²Ð·ÑÐ»Ð¸ ÐºÐ°Ñ€Ñ‚Ñƒ" << endl;
 		takeAll(strokeNumber, activeCards_1, activeCards_2);
 		Player_2 = addCards(Player_2);
 		--strokeNumber;
@@ -277,14 +277,14 @@ int Game::Move_2(int strokeNumber) {
 	else {
 		 int necCard = 0;
 		while(true) {
-			cout << "Êàêîé êàðòîé âû áóäåòå îòáèâàòüñÿ?" << endl;
+			cout << "ÐšÐ°ÐºÐ¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹ Ð²Ñ‹ Ð±ÑƒÐ´ÐµÑ‚Ðµ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ?" << endl;
 			cin >> necCard;
 			--necCard;
 			if (Check(necCard, goodCard) == false) {
-		 		cout << "ýòîé êàðòîé íåëüçÿ îòáèòüñÿ, âûáåðèòå äðóãóþ" << endl;
+		 		cout << "ÑÑ‚Ð¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹ Ð½ÐµÐ»ÑŒÐ·Ñ Ð¾Ñ‚Ð±Ð¸Ñ‚ÑŒÑÑ, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³ÑƒÑŽ" << endl;
 			} 
 			else {
-				cout << "âû îòáèâàåòåñü êàðòîé: " << Player_1[necCard].name << " " << Player_1[necCard].suit << endl;
+				cout << "Ð²Ñ‹ Ð¾Ñ‚Ð±Ð¸Ð²Ð°ÐµÑ‚ÐµÑÑŒ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹: " << Player_1[necCard].name << " " << Player_1[necCard].suit << endl;
 				activeCards_1.push_back(Player_1[necCard]);
 				Player_1.erase(Player_1.begin() + necCard);
 				break;
@@ -299,7 +299,7 @@ int Game::Move_2(int strokeNumber) {
 	}
 	
 	while (flipCard.size() > 0) {
-		cout << "ïîäêèäûâàþ: " << flipCard[0].name << " " << flipCard[0].suit << endl;
+		cout << "Ð¿Ð¾Ð´ÐºÐ¸Ð´Ñ‹Ð²Ð°ÑŽ: " << flipCard[0].name << " " << flipCard[0].suit << endl;
 		activeCards_2.push_back(flipCard[0]);
 		for(int i = 0; i < Player_2.size(); i++){
 			if (Player_2[i].name == flipCard[0].name && Player_2[i].suit == flipCard[0].suit) {
@@ -308,7 +308,7 @@ int Game::Move_2(int strokeNumber) {
 		}
 		goodCard = GoodCards(strokeNumber, activeCards_2.size() - 1, activeCards_2);
 		if (goodCard.size() == 0) {
-			cout << "âàì íå÷åì îòáèâàòüñÿ, âû âçÿëè êàðòó" << endl;
+			cout << "Ð²Ð°Ð¼ Ð½ÐµÑ‡ÐµÐ¼ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ, Ð²Ñ‹ Ð²Ð·ÑÐ»Ð¸ ÐºÐ°Ñ€Ñ‚Ñƒ" << endl;
 			takeAll(strokeNumber, activeCards_1, activeCards_2);
 			Player_2 = addCards(Player_2);
 			--strokeNumber;
@@ -316,8 +316,8 @@ int Game::Move_2(int strokeNumber) {
 		}  
 		else {
 			int stop = 0;
-			cout << "åñëè âû áóäåòå îòáèâàòüñÿ, ââåäèòå 1." << endl;
-			cout << "åñëè âû íå õîòèòå îòáèâàòüñÿ, ââåäèòå 0." << endl;
+			cout << "ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð±ÑƒÐ´ÐµÑ‚Ðµ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1." << endl;
+			cout << "ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð½Ðµ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 0." << endl;
 			cin >> stop;
 			if (stop != 1){
 				takeAll(strokeNumber, activeCards_1, activeCards_2);
@@ -328,16 +328,16 @@ int Game::Move_2(int strokeNumber) {
 			
 			int necCard = 0;
 			 while(true) {
-				cout << "Êàêîé êàðòîé âû áóäåòå îòáèâàòüñÿ?" << endl;
-				cout << "âàøè êàðòû: " << endl;
+				cout << "ÐšÐ°ÐºÐ¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹ Ð²Ñ‹ Ð±ÑƒÐ´ÐµÑ‚Ðµ Ð¾Ñ‚Ð±Ð¸Ð²Ð°Ñ‚ÑŒÑÑ?" << endl;
+				cout << "Ð²Ð°ÑˆÐ¸ ÐºÐ°Ñ€Ñ‚Ñ‹: " << endl;
 				PrintVector(Player_1);
 				cin >> necCard;
 				--necCard;
 				if (Check(necCard, goodCard) == false) {
-			 		cout << "ýòîé êàðòîé íåëüçÿ îòáèòüñÿ, âûáåðèòå äðóãóþ" << endl;
+			 		cout << "ÑÑ‚Ð¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹ Ð½ÐµÐ»ÑŒÐ·Ñ Ð¾Ñ‚Ð±Ð¸Ñ‚ÑŒÑÑ, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³ÑƒÑŽÅ£" << endl;
 				} 
 				else {
-				 	cout << "âû îòáèâàåòåñü êàðòîé: " << Player_1[necCard].name << " " << Player_1[necCard].suit << endl;
+				 	cout << "Ð²Ñ‹ Ð¾Ñ‚Ð±Ð¸Ð²Ð°ÐµÑ‚ÐµÑÑŒ ÐºÐ°Ñ€Ñ‚Ð¾Ð¹: " << Player_1[necCard].name << " " << Player_1[necCard].suit << endl;
 					activeCards_1.push_back(Player_1[necCard]);
 					Player_1.erase(Player_1.begin() + necCard);
 					break;
@@ -389,29 +389,29 @@ void Game::startGame() {
 		}
 	}
 	TrumpCard = Deck[Deck.size() - 1];
-	cout << "Êîçûðíàÿ êàðòà: " << TrumpCard.name << " " << TrumpCard.suit << endl;
-	cout << "âàøà êîëîäà - ¹1." << endl;
+	cout << "ÐšÐ¾Ð·Ñ‹Ñ€Ð½Ð°Ñ ÐºÐ°Ñ€Ñ‚Ð°: " << TrumpCard.name << " " << TrumpCard.suit << endl;
+	cout << "Ð²Ð°ÑˆÐ° ÐºÐ¾Ð»Ð¾Ð´Ð° - â„–1." << endl;
 	
 	int strokeNumber = 1;
 	while (Player_1.size() > 0 && Player_2.size() > 0) {
 		if (strokeNumber % 2 == 1) {	
 			strokeNumber = Move_1(strokeNumber) + 1;	
-			cout << "Áèòà!" << endl;
+			cout << "Ð‘Ð¸Ñ‚Ð°!" << endl;
 			
 			system("pause");
 		}
 		
 		else { 
 			strokeNumber = Move_2(strokeNumber) + 1;
-			cout << "Áèòà!" << endl;  
+			cout << "Ð‘Ð¸Ñ‚Ð°!" << endl;  
 			
 			system("pause");     
 		}
 	}
 	if (Player_1.size() == 0) {
-		cout << "Èãðà çàêîí÷åíà. ïîáåäèë èãðîê ¹" << 1 <<". " << endl;
+		cout << "Ð˜Ð³Ñ€Ð° Ð·Ð°ÐºÐ¾Ð½Ñ‡ÐµÐ½Ð°. Ð¿Ð¾Ð±ÐµÐ´Ð¸Ð» Ð¸Ð³Ñ€Ð¾Ðº â„–" << 1 <<". " << endl;
 	} else {
-		cout << "Èãðà çàêîí÷åíà. ïîáåäèë èãðîê ¹" << 2 <<". " << endl;
+		cout << "Ð˜Ð³Ñ€Ð° Ð·Ð°ÐºÐ¾Ð½Ñ‡ÐµÐ½Ð°. Ð¿Ð¾Ð±ÐµÐ´Ð¸Ð» Ð¸Ð³Ñ€Ð¾Ðº â„–" << 2 <<". " << endl;
 	}
 
 }
