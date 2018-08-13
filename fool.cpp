@@ -1,10 +1,10 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <windows.h>
-#include <algorithm>
-#include <ctime>
+#include <iostream>      // Это стандартная карточная игра "Дурак" для одного человека,
+#include <fstream>       // который играет против "компьютера".
+#include <string>        // Уже готово: перевод хода, подкидывание карт.
+#include <vector>        // Но к сожалению ходы компьютера пока что не доведены до ума (практически рандомные).
+#include <windows.h>     // В будующем это будет исправлено.
+#include <algorithm>     // Сам код сырой и очень непонятный(я сам иногда путался в нем)
+#include <ctime>        
 #include <map>
 using namespace std;
 
