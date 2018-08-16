@@ -385,13 +385,12 @@ bool Game::Check(const int& card, const vector<int>& goodCard) {
 void Game::startGame() {
 	startHandSize = 6;
 	for (int i = 0; i < startHandSize; i++) {
-		Player_1.push_back(Deck[0]);
-		Deck.erase(Deck.begin());
+		Player_1.push_back(Deck[i]);
 	}
-	for (int i = 0; i < startHandSize; i++) {
-		Player_2.push_back(Deck[0]);
-		Deck.erase(Deck.begin());
-	}
+	for (int i = startHandSize; i < startHandSize + startHandSize; i++) {
+		Player_2.push_back(Deck[i]);
+	}     
+	Deck.erase(Deck.begin(), Deck.begin() + 12); 
 	TrumpCard = Deck[Deck.size() - 1];
 	cout << "Козырная карта: " << TrumpCard.name << " " << TrumpCard.suit << endl;
 	cout << "ваша колода - №1.." << endl;
