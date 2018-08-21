@@ -52,19 +52,24 @@ void PrintVector(const vector<Card>& vector) {
 }
 
 Game::Game(const string& CardsFile) {
-	ifstream input(CardsFile.c_str());
-	Card card;
-	int number = 1;
-	while(!input.eof()) {
-		input >> card.name;
-		input >> card.suit;
-		Deck.push_back(card);
-		
-		if (number > 9) {
-			number = 1;
+	map<string, int>
+	cardPriority{
+		{"6", 6},
+		{"7", 7},
+		{"8", 8},
+		{"9", 9},
+		{"10", 10},
+		{"валет", 11},
+		{"дама", 12},
+		{"король", 13},
+		{"туз", 14}
+	};
+	vector <string> suits {"черви", "буби", "крести", "пики"};
+	for( const auto &suit : suits) {
+		for ( const auto &card : cardPriority) {
+			const auto &name = card -> first;
+			Deck.push_back({.name = name, .suit = suit});
 		}
-		cardPriority[card.name] = number;
-		++number;
 	}
 	
 	srand(time(NULL));	
