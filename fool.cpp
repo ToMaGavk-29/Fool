@@ -1,3 +1,4 @@
+
 #include <iostream>      // Это стандартная карточная игра "Дурак" для одного человека,
 #include <fstream>       // который играет против "компьютера".
 #include <string>        // Уже готово: перевод хода, подкидывание карт.
@@ -28,8 +29,31 @@ class Game {
 public:
 	Game();
 	void start();
-	
 private:
+	private:	
+	const int startHandSize = 6;
+	vector <Card> Deck;
+	vector <Card> Player_1;
+	vector <Card> Player_2;
+	vector<Card> activeCards_1, activeCards_2;
+	Card TrumpCard;
+	map <string, int> cardPriority;
+	Text replicas[13] = {
+		{"Какой картой вы будете отбиваться?", "отбиваю: "},
+		{"этой картой нельзя отбиться, выберите другую ", ""},
+		{"вы отбиваетесь картой: ", ""},
+		{"какую карту вы будете подкидывать?", "подкидываю"},
+		{"эту карту нельзя подкинуть, выбертье другую карту", ""},
+		{"вы подкинули карту: ", ""},
+		{"переводить", "прервожу: "},
+		{"перевести", ""},
+		{"переводите", ""},
+		{"если вы будете отбиваться", ""},
+		{"если вы не хотите отбиваться", ""},
+		{"если вы будете подкидывать карту", ""},
+		{"если вы не хотите подкидывать карту", ""}
+	};
+	
 	int move_1(int strokeNumber);
 	int move_2(int strokeNumber);
 	
@@ -48,14 +72,6 @@ private:
 	bool canPlayerBeat(const vector<int> &goodCard);
 	bool isCardInSet(const Card &card, const vector<Card> &cards);
 	bool isCardInSet(const int &card, const vector<int> &cards);
-	
-	vector <Card> Deck;
-	vector <Card> Player_1;
-	vector <Card> Player_2;
-	vector<Card> activeCards_1, activeCards_2;
-	Card TrumpCard;
-	map <string, int> cardPriority;
-	const int startHandSize = 6;
 };
 
 void PrintVector(const vector<Card> &vector) {
@@ -187,10 +203,10 @@ void Game::selectionCard_2(){
 	Player_2.erase(Player_2.begin() + selectedCard);	
 }
 
-bool Game::canPlayerTakeCards(){
+bool Game::canPlayerTakeCards(int replicaIndex){
 	int stop;
-	cout << "если вы будете отбиваться, введите 1." << endl;
-	cout << "если вы не хотите отбиваться, введите 0." << endl;
+	cout << replicas[replicaIndex].Player_1 << ", введите 1." << endl;
+	cout << replicas[replicaIndex + 1].Player_1 <<", введите 0." << endl;
 	cin >> stop;
 	if(stop == 1){
 		return true;
@@ -198,9 +214,9 @@ bool Game::canPlayerTakeCards(){
 	return false;
 }
 
-void Game::whichCardPlayerFighting(const int &strokeNumber, const vector<int> &cards){
+void Game::whichCardPlayerFighting(const int &strokeNumber, const vector<int> &cards, int replicaIndex){
 	if(strokeNumber % 2 == 1){
-		cout << "отбиваю: " << Player_2[cards[0]].name << " " << Player_2[cards[0]].suit << endl;
+		cout << replicas[replicaIndex].Player_2 << Player_2[cards[0]].name << " " << Player_2[cards[0]].suit << endl;
 		activeCards_2.push_back(Player_2[cards[0]]);
 		Player_2.erase(Player_2.begin() + cards[0]);
 		return;
@@ -208,23 +224,23 @@ void Game::whichCardPlayerFighting(const int &strokeNumber, const vector<int> &c
 	
 	while(true) {
 		int necCard = 0;
-		cout << "Какой картой вы будете отбиваться?" << endl;
+		cout << replicas[replicaIndex].Player_1 << endl;
 		cout << "ваши карты: " << endl;
 		PrintVector(Player_1);
 		cin >> necCard;
 		--necCard;
 		if (isCardInSet(necCard, cards) == false) {
-	 		cout << "этой картой нельзя отбиться, выберите другую" << endl;
+	 		cout << replicas[replicaIndex + 1].Player_1 << endl;
 		} 
 		else {
-			cout << "вы отбиваетесь картой: " << Player_1[necCard].name << " " << Player_1[necCard].suit << endl;
+			cout << replicas[replicaIndex + 2].Player_1 << Player_1[necCard].name << " " << Player_1[necCard].suit << endl;
 			activeCards_1.push_back(Player_1[necCard]);
 			Player_1.erase(Player_1.begin() + necCard);
 			break;
 		}
 	}
 	return;
-}	
+}
 
 vector<Card> Game::uniteVectors(const vector<Card>& vector_1, const vector<Card>& vector_2){
 	vector<Card> newVector;
@@ -281,32 +297,33 @@ int Game::move_1(int strokeNumber) {
 			
 	flipCard = canPlayerFlip(strokeNumber, allActiveCards);	
 	while (flipCard.size() > 0) {
-		stop = strokeNumber % 2 == 1 ? true : canPlayerTakeCards();
+		stop = strokeNumber % 2 == 1 ? canPlayerTakeCards(11) : true;
 		if (stop == false){
 			break;
 		}
 		
 		cout << "подкинуть ..." << endl;
-		whichCardPlayerFighting(strokeNumber + 1, flipCard);
 		
-		bool stop = strokeNumber % 2 == 1 ? true : canPlayerTakeCards();	
+		whichCardPlayerFighting(strokeNumber + 1, flipCard, 3);
+		
+		bool stop = strokeNumber % 2 == 1 ? true : canPlayerTakeCards(9);	
 		if (stop == false){
 			takeAll(strokeNumber);
 			walking = addCards(walking);
 			--strokeNumber;
 			return strokeNumber;
 		}
-		
-		goodCard = goodCards(strokeNumber, activeCards_1.size() - 1, activeCards_1); // исправить activeCards_1.size() - 1, чтобы в разных случаях 
-		if (canPlayerBeat(goodCard) == false) {                                      // просматривались разные activeCards: 1 или 2.
+		vector<Card> &activeCards = strokeNumber % 2 == 1 ? activeCards_1 :  activeCards_2;
+		goodCard = goodCards(strokeNumber, activeCards.size() - 1, activeCards); 
+		if (canPlayerBeat(goodCard) == false) {
 			cout << "беру карты" << endl;
 			takeAll(strokeNumber);
-			Player_1 = addCards(Player_1);
+			walking = addCards(walking);
 			--strokeNumber;
 			return strokeNumber;	
 		}
 		
-		whichCardPlayerFighting(strokeNumber, goodCard);		
+		whichCardPlayerFighting(strokeNumber, goodCard, 0);		
 		flipCard.clear();
 		flipCard = canPlayerFlip(strokeNumber, allActiveCards);
 	}
