@@ -41,41 +41,41 @@ private:
 		{"8", 8},
 		{"9", 9},
 		{"10", 10},
-		{"валет", 11},
-		{"дама", 12},
-		{"король", 13},
-		{"туз", 14}
+		{"ГўГ Г«ГҐГІ", 11},
+		{"Г¤Г Г¬Г ", 12},
+		{"ГЄГ®Г°Г®Г«Гј", 13},
+		{"ГІГіГ§", 14}
 	};
 	string replicas_1_Player[12] =
 	{
-		{"Какой картой вы будете отбиваться?"},
-		{"этой картой нельзя отбиться, выберите другую "},
-		{"вы отбиваетесь картой: "},
-		{"какую карту вы будете подкидывать?"},
-		{"эту карту нельзя подкинуть, выбертье другую карту"},
-		{"вы подкинули карту: "},
-		{"какой картой вы будете переводить?"},
-		{"этой картой нельзя перевести, выберите другую ",},
-		{"вы переводите картой: "},
-		{"какой картой вы хотите сходить?"},
-		{"этой карты у вас нет, выберите другую "},
-		{"вы ходите картой: "}
+		{"РљР°РєРѕР№ РєР°СЂС‚РѕР№ РІС‹ Р±СѓРґРµС‚Рµ РѕС‚Р±РёРІР°С‚СЊСЃСЏ?"},
+		{"СЌС‚РѕР№ РєР°СЂС‚РѕР№ РЅРµР»СЊР·СЏ РѕС‚Р±РёС‚СЊСЃСЏ, РІС‹Р±РµСЂРёС‚Рµ РґСЂСѓРіСѓСЋ "},
+		{"РІС‹ РѕС‚Р±РёРІР°РµС‚РµСЃСЊ РєР°СЂС‚РѕР№: "},
+		{"РєР°РєСѓСЋ РєР°СЂС‚Сѓ РІС‹ Р±СѓРґРµС‚Рµ РїРѕРґРєРёРґС‹РІР°С‚СЊ?"},
+		{"СЌС‚Сѓ РєР°СЂС‚Сѓ РЅРµР»СЊР·СЏ РїРѕРґРєРёРЅСѓС‚СЊ, РІС‹Р±РµСЂС‚СЊРµ РґСЂСѓРіСѓСЋ РєР°СЂС‚Сѓ"},
+		{"РІС‹ РїРѕРґРєРёРЅСѓР»Рё РєР°СЂС‚Сѓ: "},
+		{"РєР°РєРѕР№ РєР°СЂС‚РѕР№ РІС‹ Р±СѓРґРµС‚Рµ РїРµСЂРµРІРѕРґРёС‚СЊ?"},
+		{"СЌС‚РѕР№ РєР°СЂС‚РѕР№ РЅРµР»СЊР·СЏ РїРµСЂРµРІРµСЃС‚Рё, РІС‹Р±РµСЂРёС‚Рµ РґСЂСѓРіСѓСЋ ",},
+		{"РІС‹ РїРµСЂРµРІРѕРґРёС‚Рµ РєР°СЂС‚РѕР№: "},
+		{"РєР°РєРѕР№ РєР°СЂС‚РѕР№ РІС‹ С…РѕС‚РёС‚Рµ СЃС…РѕРґРёС‚СЊ?"},
+		{"СЌС‚РѕР№ РєР°СЂС‚С‹ Сѓ РІР°СЃ РЅРµС‚, РІС‹Р±РµСЂРёС‚Рµ РґСЂСѓРіСѓСЋ "},
+		{"РІС‹ С…РѕРґРёС‚Рµ РєР°СЂС‚РѕР№: "}
 	};
 	string replicasComp[4] =
 	{
-		{"отбиваю: "},
-		{"подкидываю: "},
-		{"прервожу: "},
-		{"Хожу: "}
+		{"РѕС‚Р±РёРІР°СЋ: "},
+		{"РїРѕРґРєРёРґС‹РІР°СЋ: "},
+		{"РїСЂРµСЂРІРѕР¶Сѓ: "},
+		{"РҐРѕР¶Сѓ: "}
 	};
 	string replicas_2_Player[6] =
 	{
-		{"если вы будете отбиваться"},
-		{"если вы не хотите отбиваться"},
-		{"если вы будете подкидывать карту"},
-		{"если вы не хотите подкидывать карту"},
-		{"если вы будете переводить"},
-		{"если вы не хотите переводить"}
+		{"РµСЃР»Рё РІС‹ Р±СѓРґРµС‚Рµ РѕС‚Р±РёРІР°С‚СЊСЃСЏ"},
+		{"РµСЃР»Рё РІС‹ РЅРµ С…РѕС‚РёС‚Рµ РѕС‚Р±РёРІР°С‚СЊСЃСЏ"},
+		{"РµСЃР»Рё РІС‹ Р±СѓРґРµС‚Рµ РїРѕРґРєРёРґС‹РІР°С‚СЊ РєР°СЂС‚Сѓ"},
+		{"РµСЃР»Рё РІС‹ РЅРµ С…РѕС‚РёС‚Рµ РїРѕРґРєРёРґС‹РІР°С‚СЊ РєР°СЂС‚Сѓ"},
+		{"РµСЃР»Рё РІС‹ Р±СѓРґРµС‚Рµ РїРµСЂРµРІРѕРґРёС‚СЊ"},
+		{"РµСЃР»Рё РІС‹ РЅРµ С…РѕС‚РёС‚Рµ РїРµСЂРµРІРѕРґРёС‚СЊ"}
 	};
 
 	void move();
@@ -127,7 +127,7 @@ void setupConsole()
 
 Game::Game()
 {
-	vector <string> suits {"черви", "буби", "крести", "пики"};
+	vector <string> suits {"С‡РµСЂРІРё", "Р±СѓР±Рё", "РєСЂРµСЃС‚Рё", "РїРёРєРё"};
 	for( const auto &suit : suits)
 	{
 		for ( const auto &card : cardPriority)
@@ -154,15 +154,15 @@ Game::Game()
 
 void Game::start()
 {
-	cout << "Козырная карта: " << TrumpCard.name << " " << TrumpCard.suit << endl;
-	cout << "ваша колода - №1." << endl;
+	cout << "РљРѕР·С‹СЂРЅР°СЏ РєР°СЂС‚Р°: " << TrumpCard.name << " " << TrumpCard.suit << endl;
+	cout << "РІР°С€Р° РєРѕР»РѕРґР° - в„–1." << endl;
 
-	while (!Player_1.empty() && !Player_2.empty()) 						// основной цикл
+	while (!Player_1.empty() && !Player_2.empty()) 				// РѕСЃРЅРѕРІРЅРѕР№ С†РёРєР»
 	{
-		cout << "колода №1: " << endl;
+		cout << "ГЄГ®Г«Г®Г¤Г  В№1: " << endl;
 		PrintVector(Player_1);
 		cout << endl;
-		cout << "колода №2: " << endl;
+		cout << "ГЄГ®Г«Г®Г¤Г  В№2: " << endl;
 		PrintVector(Player_2);
 		vector <int> cardsNumbers;
 		for(int i = 0; i < (strokeNumber % 2 == 1 ? Player_1.size() : Player_2.size() ); i++)
@@ -170,19 +170,17 @@ void Game::start()
 			cardsNumbers.push_back(i);
 		}
 		int cardNumber = strokeNumber % 2 == 1 ? 0 : selectionCard();
-		strokeNumber % 2 == 1 ? whichCardPlayerFighting(cardsNumbers, 9) : whichCardComputerFighting(cardNumber, 3); // выбор карты, которой будем ходить
-		
-		translate();													// перевод хода
-
-		move();															// функция одного хода, в ней происходит:
-																		// отбитие карт, подкидывание карт, отбитие подкинутых карт
-		cout << "Бита!" << endl;
+		strokeNumber % 2 == 1 ? whichCardPlayerFighting(cardsNumbers, 9) : whichCardComputerFighting(cardNumber, 3); // РІС‹Р±РѕСЂ РєР°СЂС‚С‹, РєРѕС‚РѕСЂРѕР№ Р±СѓРґРµРј С…РѕРґРёС‚СЊ
+		translate();							// РїРµСЂРµРІРѕРґ С…РѕРґР°
+		move();								// С„СѓРЅРєС†РёСЏ РѕРґРЅРѕРіРѕ С…РѕРґР°, РІ РЅРµР№ РїСЂРѕРёСЃС…РѕРґРёС‚:							
+		                                                                // РѕС‚Р±РёС‚РёРµ РєР°СЂС‚, РїРѕРґРєРёРґС‹РІР°РЅРёРµ РєР°СЂС‚, РѕС‚Р±РёС‚РёРµ РїРѕРґРєРёРЅСѓС‚С‹С… РєР°СЂС‚
+		cout << "Р‘РёС‚Р°!" << endl;
 		system("pause");
 		++strokeNumber;
 		activeCards_1.clear();
 		activeCards_2.clear();
 	}
-	cout << "игра закончена, победил игрок № " << (Player_1.empty() ? 1 : 2) << endl;
+	cout << "РёРіСЂР° Р·Р°РєРѕРЅС‡РµРЅР°, РїРѕР±РµРґРёР» РёРіСЂРѕРє в„– " << (Player_1.empty() ? 1 : 2) << endl;
 }
 
 void Game::move()
@@ -196,10 +194,10 @@ void Game::move()
 	vector<Card> &repellent = strokeNumber % 2 == 1 ? Player_2 : Player_1;
 
 	allActiveCards = uniteVectors(activeCards_1, activeCards_2);
-	cout << "карты, которые нужно отбить: " << endl;
+	cout << "РєР°СЂС‚С‹, РєРѕС‚РѕСЂС‹Рµ РЅСѓР¶РЅРѕ РѕС‚Р±РёС‚СЊ: " << endl;
 	PrintVector(allActiveCards);
 
-	if (!(strokeNumber % 2 == 1 ? true : canPlayerTakeCards(0))) 	// спрашиваем, будет ли игрок отбиваться
+	if (!(strokeNumber % 2 == 1 ? true : canPlayerTakeCards(0))) 	// СЃРїСЂР°С€РёРІР°РµРј, Р±СѓРґРµС‚ Р»Рё РёРіСЂРѕРє РѕС‚Р±РёРІР°С‚СЊСЃСЏ
 	{
 		takeAll();
 		addCards(walking);
@@ -207,32 +205,32 @@ void Game::move()
 		return;
 	}
 
-	for(int i = 0; i < allActiveCards.size(); i++) 				 	// отбиваие всех карт
+	for(int i = 0; i < allActiveCards.size(); i++) 			// РѕС‚Р±РёРІР°РЅРёРµ РІСЃРµС… РєР°СЂС‚
 	{
 		goodCard = goodCards(i, allActiveCards);
 		if (goodCard.empty())
 		{
-			cout << "нечем биться, беру карты" << endl;
+			cout << "РЅРµС‡РµРј Р±РёС‚СЊСЃСЏ, Р±РµСЂСѓ РєР°СЂС‚С‹" << endl;
 			takeAll();
 			addCards(walking);
 			--strokeNumber;
 			return;
 		}
-		cout << "карта №" << i + 1 <<": " << allActiveCards[i].name << " " << allActiveCards[i].suit << endl;
+		cout << "РєР°СЂС‚Р° в„–" << i + 1 <<": " << allActiveCards[i].name << " " << allActiveCards[i].suit << endl;
 		strokeNumber % 2 == 1 ? whichCardComputerFighting(goodCard[0], 0) : whichCardPlayerFighting(goodCard, 0);
 	}
-	//							   		!!!!!! постараться объединить верхнюю и нижнюю части этой функции (move) !!!!!!
+	//							   		
 	allActiveCards = uniteVectors(activeCards_1, activeCards_2);
 	flipCard = canPlayerFlip(allActiveCards);
-	while (flipCard.size() > 0) 								 	 // подкидывание и отбивание подкинутых карт				
+	while (flipCard.size() > 0) 						// РїРѕРґРєРёРґС‹РІР°РЅРёРµ Рё РѕС‚Р±РёРІР°РЅРёРµ РїРѕРґРєРёРЅСѓС‚С‹С… РєР°СЂС‚				
 	{
-		if (!(strokeNumber % 2 == 1 ? canPlayerTakeCards(2) : true)) // спрашиваем, будет ли игрок подкидывать
+		if (!(strokeNumber % 2 == 1 ? canPlayerTakeCards(2) : true)) // СЃРїСЂР°С€РёРІР°РµРј, Р±СѓРґРµС‚ Р»Рё РёРіСЂРѕРє РїРѕРґРєРёРґС‹РІР°С‚СЊ
 		{
 			break;
 		} 
 		
 		strokeNumber % 2 == 1 ? whichCardPlayerFighting(flipCard, 3) : whichCardComputerFighting(flipCard[0], 1);	
-		if (!(strokeNumber % 2 == 1 ? true : canPlayerTakeCards(0))) // спрашиваем, будет ли игрок отбиваться
+		if (!(strokeNumber % 2 == 1 ? true : canPlayerTakeCards(0))) // СЃРїСЂР°С€РёРІР°РµРј, Р±СѓРґРµС‚ Р»Рё РёРіСЂРѕРє РѕС‚Р±РёРІР°С‚СЊСЃСЏ
 		{
 			takeAll();
 			addCards(walking);
@@ -244,14 +242,14 @@ void Game::move()
 		goodCard = goodCards(activeCards.size() - 1, activeCards); 
 		if (goodCard.empty())
 		{
-			cout << "нечем биться, беру карты" << endl;
+			cout << "РЅРµС‡РµРј Р±РёС‚СЊСЃСЏ, Р±РµСЂСѓ РєР°СЂС‚С‹" << endl;
 			takeAll();
 			addCards(walking);
 			--strokeNumber;
 			return;	
 		}
 		
-		strokeNumber % 2 == 1 ? whichCardComputerFighting(goodCard[0], 0) : whichCardPlayerFighting(goodCard, 0);	// отбиваемся
+		strokeNumber % 2 == 1 ? whichCardComputerFighting(goodCard[0], 0) : whichCardPlayerFighting(goodCard, 0);// РѕС‚Р±РёРІР°РµРјСЃСЏ
 		allActiveCards = uniteVectors(activeCards_1, activeCards_2);	
 		flipCard.clear();
 		flipCard = canPlayerFlip(allActiveCards);
@@ -305,7 +303,7 @@ void Game::whichCardPlayerFighting(const vector<int> &cards, const int &replicaI
 	while(true)
 	{
 		cout << endl << replicas_1_Player[replicaIndex] << endl << endl;
-		cout << "ваши карты: " << endl;
+		cout << "РІР°С€Рё РєР°СЂС‚С‹: " << endl;
 		PrintVector(Player_1);
 		cin >> necCard;
 		--necCard;
@@ -341,23 +339,23 @@ int Game::selectionCard()
 	return selectedCard;	
 }
 
-void Game::translate()												// !!!доделать перевод хода, заполнить goodCard всеми возможными вариантами, 
-{																	//	а не первым возможным !!!!!
-	int translateCard;
+void Game::translate()		
+{
+	int translateCa
 	vector<int> goodCard;
-	while (true) 													 // переводим ход на другого игрока
+	while (true) 								//РїРµСЂРµРІРѕРґРёРј С…РѕРґ РЅР° РґСЂСѓРіРѕРіРѕ РёРіСЂРѕРєР°
 	{
 		translateCard = canPlayerTranslate();
 		if(translateCard == cardIsAbsent)
 		{
 			break;
 		}
-		if(!(strokeNumber % 2 == 1 ? true : canPlayerTakeCards(4)))   // спрашиваем, будет ли игрок переводить
+		if(!(strokeNumber % 2 == 1 ? true : canPlayerTakeCards(4)))   // СЃРїСЂР°С€РёРІР°РµРј, Р±СѓРґРµС‚ Р»Рё РёРіСЂРѕРє РїРµСЂРµРІРѕРґРёС‚СЊ
 		{
 			break;
 		}
 		goodCard.push_back(translateCard);
-		strokeNumber % 2 == 1 ? whichCardComputerFighting(goodCard[0], 2) : whichCardPlayerFighting(goodCard, 6); // выбираем карту для перевода
+		strokeNumber % 2 == 1 ? whichCardComputerFighting(goodCard[0], 2) : whichCardPlayerFighting(goodCard, 6); // РІС‹Р±РёСЂР°РµРј РєР°СЂС‚Сѓ РґР»СЏ РїРµСЂРµРІРѕРґР°
 		++strokeNumber;
 	}
 }
@@ -380,8 +378,8 @@ int Game::canPlayerTranslate()
 bool Game::canPlayerTakeCards(const int replicaIndex)
 {
 	int stop;
-	cout << replicas_2_Player[replicaIndex] << ", введите 1." << endl;
-	cout << replicas_2_Player[replicaIndex + 1] <<", введите 0." << endl;
+	cout << replicas_2_Player[replicaIndex] << ", РІРІРµРґРёС‚Рµ 1." << endl;
+	cout << replicas_2_Player[replicaIndex + 1] <<", РІРІРµРґРёС‚Рµ 0." << endl;
 	cin >> stop;
 	if(stop == 1)
 	{
@@ -414,7 +412,7 @@ void Game::addCards(vector<Card> &Player)
 		Player.push_back(Deck[0]);
 		Deck.erase(Deck.begin());
 	}
-	cout << "все карты взяты" << endl;
+	cout << "РІСЃРµ РєР°СЂС‚С‹ РІР·СЏС‚С‹" << endl;
 }
 
 void Game::takeAll() 
